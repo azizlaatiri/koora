@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un club{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un nouveau club</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.ref) }}
+
+        <button class="btn btn-primary">Ajouter</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('club_list') }}" class="btn btn-secondary">Retour à la liste des clubs</a>
+{% endblock %}

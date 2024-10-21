@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des clubs{% endblock %}
+
+{% block body %}
+    <h1>Liste des clubs</h1>
+
+    <ul>
+        {% for club in clubs %}
+            <li>
+                {{ club.name }} ({{ club.ref }})
+             <a href="{{ path('remove_club', { id: club.id }) }}" class="btn btn-danger">Supprimer</a>
+                             <a href="{{ path('edit_club', { id: club.id }) }}" class="btn btn-warning">Modifier</a>
+                                                          <a href="{{ path('club_detail', { id: club.id }) }}" class="btn btn-warning">Details</a>
+
+
+
+
+                <!-- Lien pour ajouter un joueur au club, en passant l'ID du club -->
+            </li>
+        {% else %}
+            <li>Aucun club trouvé.</li>
+        {% endfor %}
+    </ul>
+    <hr>
+<p>
+    <ul><a href="{{ path('add_club') }}" class="btn btn-primary">ajouter un club</a></ul>
+</p>
+<hr>
+
+{% endblock %}

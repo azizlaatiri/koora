@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails du club {{ club.name }}{% endblock %}
+
+{% block body %}
+    <h1>Détails du club : {{ club.name }}</h1>
+
+    <ul>
+        <li><strong>Référence :</strong> {{ club.ref }}</li>
+        <li><strong>Nom :</strong> {{ club.name }}</li>
+    </ul>
+
+  
+
+    <a href="{{ path('club_list') }}" class="btn btn-primary">Retour à la liste des clubs</a>
+{% endblock %}
